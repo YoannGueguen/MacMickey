@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MacMickey.DomainModel.Persons
+namespace MacMickey.DomainModel
 {
     public abstract class Person
     {

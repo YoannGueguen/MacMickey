@@ -10,6 +10,7 @@ namespace MacMickey.Dal
     public class MacContext : DbContext 
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Person> Persons { get; set; }
 
         public DbSet<Beverage> Beverages { get; set; }
         public DbSet<Burger> Burgers { get; set; }
@@ -19,6 +20,11 @@ namespace MacMickey.Dal
 
         public DbSet<Bread> Breads { get; set; }
         public DbSet<Baker> Bakers { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Manager> Managers { get; set; }
+
 
         //Static constructor define initializer once and only once
         static MacContext()
@@ -61,7 +67,6 @@ namespace MacMickey.Dal
             modelBuilder.ApplyConfiguration(new BreadMapping());
             modelBuilder.ApplyConfiguration(new BakerMapping());
             modelBuilder.ApplyConfiguration(new BakerBreadMapping());
-
 
             base.OnModelCreating(modelBuilder);
         }

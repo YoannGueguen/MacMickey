@@ -26,7 +26,7 @@ namespace MacMickey.Dal
             {
                 new Burger()
                 {
-                    Name = "Big Mick'",
+                    Name = "Big Mick",
                     Description = "Le seul, l'unique Big Mick' de chez Mac Mickey ! Ses deux steaks hachés, son cheddar fondu, ses oignons, ses cornichons, son lit de salade et sa sauce inimitable, font du Big Mick' un sandwich culte et indémodable.",
                     BeefWeight = 100,
                     Weight = 225,
@@ -35,7 +35,7 @@ namespace MacMickey.Dal
                 },
                 new Burger()
                 {
-                    Name = "Royal O'Duck",
+                    Name = "Royal O Duck",
                     Description = "Fondez pour son canard pané croustillant et sa sauce légèrement vinaigrée aux oignons et aux câpres, le tout dans un pain cuit vapeur. Laissez-vous prendre dans ses filets !",
                     BeefWeight = 80,
                     Weight = 180,
@@ -104,7 +104,7 @@ namespace MacMickey.Dal
                 },
                 new Beverage()
                 {
-                    Name = "Biere d'Homère",
+                    Name = "Biere dHomere",
                     Description = "Oh yeah! Duffman est immortel ! Seul l'acteur qui le joue peut mourir.",
                     Price = 2.10M,
                     Milliliter = 33,
@@ -122,8 +122,8 @@ namespace MacMickey.Dal
                 },
                 new Beverage()
                 {
-                    Name = "Evier",
-                    Description = "McMickey s'associe à Evier® pour vous proposer des bouteilles d'eau afin d'accompagner vos menus de fraîcheur et de légèreté. ",
+                    Name = "Evian",
+                    Description = "McMickey s'associe à Evian® pour vous proposer des bouteilles d'eau afin d'accompagner vos menus de fraîcheur et de légèreté. ",
                     Price = 3.50M,
                     Milliliter = 70,
                     IsCarbonated = false,
@@ -131,7 +131,7 @@ namespace MacMickey.Dal
                 },
                 new Beverage()
                 {
-                    Name = "Café LaissePresso",
+                    Name = "Cafe LaissePresso",
                     Description = "Pour se réveiller, rien de tel qu'un LaissePresso. Un goût intense. Profitez de sa richesse et de ses arômes dès les premières lueurs de la journée.",
                     Price = 3.00M,
                     Milliliter = 20,
@@ -155,7 +155,7 @@ namespace MacMickey.Dal
                 },
                 new Side()
                 {
-                    Name = "Pat'a'toes",
+                    Name = "Patatoes",
                     Description = "Découvrez ces délicieux morceaux de pomme de terre épicés et leur sauce spéciale à la ciboulette, en accompagnement d'un menu ou pour les petites faims, ils sauront à la perfection trouver leur place sur votre plateau.",
                     Price = 3.00M,
                     SaltWeight = 9,
