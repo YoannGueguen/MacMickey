@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MacMickey.Dal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -29,6 +31,8 @@ namespace MacMickeyWeb
         {
             if (env.IsDevelopment())
             {
+                InitializeDatabase(app);
+
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
@@ -45,6 +49,14 @@ namespace MacMickeyWeb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void InitializeDatabase(IApplicationBuilder app)
+        {
+            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                scope.ServiceProvider.GetRequiredService<MacContext>().Database.Migrate();
+    }
         }
     }
 }
