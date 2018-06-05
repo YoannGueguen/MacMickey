@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MacMickey.DomainModel
 {
-    public class BasketCard
+    public class BasketCards
     {
         [Key]
         public string BasketCardId { get; set; }

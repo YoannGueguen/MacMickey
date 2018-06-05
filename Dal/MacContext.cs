@@ -10,7 +10,7 @@ namespace MacMickey.Dal
     public class MacContext : DbContext 
     {
         public DbSet<Product> Products { get; set; }
-        public DbSet<BasketCard> BasketCards { get; set; }
+        public DbSet<BasketCards> BasketCards { get; set; }
 
         public DbSet<Beverage> Beverages { get; set; }
         public DbSet<Burger> Burgers { get; set; }
