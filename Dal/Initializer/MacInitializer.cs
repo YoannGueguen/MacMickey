@@ -241,7 +241,7 @@ namespace MacMickey.Dal
                     Burger = burgers[3],
                     Beverage = beverages[0],
                     Side = sides[1],
-                    Dessert = null,
+                    Dessert = desserts[2],
                 },
             };
             #endregion

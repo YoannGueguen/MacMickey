@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MacMickey.DomainModel.ModelUser;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MacMickey.DomainModel
 {
-    public abstract class Person
+    public abstract class Person : AuditableEntity
     {
         public int PersonId { get; set; }
         public string FirstName { get; set; }

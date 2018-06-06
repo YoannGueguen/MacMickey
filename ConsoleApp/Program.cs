@@ -12,48 +12,18 @@ namespace MacMickey.ConsoleApp
             {
                 ctx.Initialize(dropAlways: true);
 
-                foreach (var burger in ctx.Burgers.ToList())
+                foreach (var menu in ctx.Menus.ToList())
                 {
-                    Console.WriteLine(burger.Name);
+                    Console.WriteLine(menu.Name);
+                    Console.WriteLine("Burger = " + menu.Burger.Name);
+                    Console.WriteLine("Beverage = " + menu.Beverage.Name);
+                    Console.WriteLine("Side = " + menu.Side.Name);
+                    Console.WriteLine("Dessert = " + menu.Dessert.Name);
+                    Console.WriteLine("-----------");
                 }
 
-                Console.WriteLine("-----------");
 
-                // NOT WORKING with RESTRICT ! 
-                //(it's deny to delete a burger before the menu associate to the burger)
-
-                //var brg = ctx.Burgers.Single(b => b.Name == "720");
-                //ctx.Burgers.Remove(brg);
-
-                //ctx.SaveChanges();
-
-                //var m = ctx.Menus.First();
-                //ctx.Menus.Remove(m);
-
-                //ctx.SaveChanges();
-
-                //foreach (var burger in ctx.Burgers.ToList())
-                //{
-                //    Console.WriteLine(burger.Name);
-                //}
-
-                //WORKING !
-                var m = ctx.Menus.First();
-                ctx.Menus.Remove(m);
-
-                ctx.SaveChanges();
-
-                var brg = ctx.Burgers.Single(b => b.Name == "720");
-                ctx.Burgers.Remove(brg);
-
-                ctx.SaveChanges();
-
-                foreach (var burger in ctx.Burgers.ToList())
-                {
-                    Console.WriteLine(burger.Name);
-                }
             }
-
             Console.ReadLine();
         }
     }

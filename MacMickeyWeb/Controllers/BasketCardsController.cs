@@ -48,7 +48,7 @@ namespace MacMickeyWeb.Controllers
         // GET: BasketCards/Create
         public IActionResult Create()
         {
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID", "Discriminator");
+            ViewData["ProductId"] = new SelectList(_context.Products, "ProductID");
             return View();
         }
 
