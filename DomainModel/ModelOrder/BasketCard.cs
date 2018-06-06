@@ -25,5 +25,6 @@ namespace MacMickey.DomainModel
 
         public virtual ICollection<BasketCardItem> BasketCardItems { get; set; }
 
+        public Order Order { get; set; }
     }
 }
