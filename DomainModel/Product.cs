@@ -32,7 +32,5 @@ namespace MacMickey.DomainModel
         /// Available items of this product
         /// </summary>
         public int Stockpiled { get; set; }
-
-        public virtual ICollection<BasketCard> BasketCards { get; set; }
     }
 }

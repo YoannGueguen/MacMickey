@@ -13,7 +13,9 @@ namespace MacMickey.Dal
         public DbSet<Product> Products { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<BasketCard> BasketCards { get; set; }
+        public DbSet<BasketCardItem> BasketCardsItem { get; set; }
         public DbSet<Order> Orders { get; set; }
+
         public DbSet<Beverage> Beverages { get; set; }
         public DbSet<Burger> Burgers { get; set; }
         public DbSet<Dessert> Desserts { get; set; }
@@ -70,6 +72,7 @@ namespace MacMickey.Dal
             modelBuilder.ApplyConfiguration(new BakerMapping());
 
             modelBuilder.ApplyConfiguration(new BasketCardMapping());
+            modelBuilder.ApplyConfiguration(new BasketCardItemMapping());
             modelBuilder.ApplyConfiguration(new OrderMapping());
 
             base.OnModelCreating(modelBuilder);

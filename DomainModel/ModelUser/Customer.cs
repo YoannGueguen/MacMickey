@@ -16,5 +16,6 @@ namespace MacMickey.DomainModel
         public virtual Employee Advisor { get; set; }
 
         public ICollection<Order> Orders { get; set; }
+        public BasketCardItem BasketCard { get; set; }
     }
 }

@@ -28,11 +28,11 @@ namespace MacMickeyWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddDbContext<MacContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MacMickeyDb")));
@@ -68,13 +68,5 @@ namespace MacMickeyWeb
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-
-        //    private void InitializeDatabase(IApplicationBuilder app)
-        //    {
-        //        using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-        //        {
-        //            scope.ServiceProvider.GetRequiredService<MacContext>().Database.Migrate();
-        //}
-        //    }
     }
 }

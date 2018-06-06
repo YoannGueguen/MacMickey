@@ -22,8 +22,12 @@ namespace MacMickeyWeb.Controllers
     
         public IActionResult Index()
         {
-            Burger menus = _context.Burgers.First();
-            return View(_context.Menus.ToList());
+            List<Burger> burgers = _context.Burgers.ToList();
+            List<Beverage> beverages = _context.Beverages.ToList();
+            List<Side> sides = _context.Sides.ToList();
+            List<Dessert> desserts = _context.Desserts.ToList();
+            List<Menu> menus = _context.Menus.ToList();
+            return View(menus);
         }
 
         public IActionResult About()

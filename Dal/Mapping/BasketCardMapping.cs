@@ -11,12 +11,11 @@ namespace MacMickey.Dal.Mapping
     {
         public void Configure(EntityTypeBuilder<BasketCard> builder)
         {
-            builder.ToTable(name: "BasketCard", schema: "Domain");
-            //ERROR MAPPING inverser les cardinalite + passer product en icollection
-            builder.HasOne(b => b.Product)
-                .WithMany(p => p.BasketCards)
-                .IsRequired()
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.ToTable(name: "BasketCard", schema: "Domain")
+                .HasKey(p => p.BasketCardId);
+
+            builder.HasMany(bc => bc.BasketCardItems)
+                .WithOne(bb => bb.BasketCard);
         }
     }
 }

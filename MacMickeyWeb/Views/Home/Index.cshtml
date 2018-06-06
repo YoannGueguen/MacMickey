@@ -8,35 +8,40 @@
 
     @foreach (var item in Model)
     {
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">@item.Name</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">@item.Price <small class="text-muted">€</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>@item.Burger.Name</li>
-                    <li>@item.Beverage.Name</li>
-                    <li>@item.Dessert.Name</li>
-                    <li>@item.Side.Name</li>
-                </ul>
-                <p>@item.Description</p>
+        <div class="col-xs-6 col-md-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">@item.Name</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">@item.Price <small class="text-muted">€</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>@item.Burger.Name</li>
+                        <li>@item.Beverage.Name</li>
+                        <li>@item.Dessert.Name</li>
+                        <li>@item.Side.Name</li>
+                    </ul>
+                    <p>@item.Description</p>
 
-                <div class="add-to-cart">
-                    <form class="inline">
-                        <input type="hidden" name="productId" value="@item.ProductID" />
-                        <div class="product-quantity">
-                            <button type="button" class="quantity-button" name="subtract" value="-">-</button>
-                            <input type="text" class="quantity-field" readonly="readonly" name="qty" value="1">
-                            <button type="button" class="quantity-button" name="add" value="+">+</button>
-                        </div>
-                        <button type="button" disabled="@(item.Stockpiled <= 0)" class="btn btn-lg btn-block btn-outline-primary">Add Card</button>
-                    </form>
+                    <div class="add-to-cart">
+                        <form class="inline">
+                            <input type="hidden" name="productId" value="@item.ProductID" />
+                            <div class="product-quantity">
+                                <button type="button" class="quantity-button" name="subtract" value="-">-</button>
+                                <input type="text" class="quantity-field" readonly="readonly" name="qty" value="1">
+                                <button type="button" class="quantity-button" name="add" value="+">+</button>
+                            </div>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Add Card</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
     }
 
 </div>
+
+@section scripts{<script simpl-append-version="true" src="~/js/menu_detail.js"></script>}
 
 
