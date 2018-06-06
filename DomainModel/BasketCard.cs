@@ -14,5 +14,6 @@ namespace MacMickey.DomainModel
         public DateTime DateCreated { get; set; }
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
+
     }
 }

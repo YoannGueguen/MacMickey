@@ -1,4 +1,5 @@
 ﻿
+using MacMickey.DomainModel.ModelOrder;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,7 @@ namespace MacMickey.DomainModel
         public string City { get; set; }
 
         public virtual Employee Advisor { get; set; }
-        //public ICollection<Order> Orders { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
     }
 }
