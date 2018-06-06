@@ -12,8 +12,10 @@ namespace MacMickey.Dal.Mapping
     {
         public void Configure(EntityTypeBuilder<BasketCardItem> builder)
         {
-            builder.ToTable(name: "BasketCardItem", schema: "Domain"); 
+            builder.ToTable(name: "BasketCardItem", schema: "Domain");
 
+            builder.HasOne(bc => bc.Product)
+    .WithMany(p => p.BasketCardItems);
         }
     }
 }

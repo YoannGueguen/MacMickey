@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MacMickey.DomainModel.ModelOrder;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -32,5 +33,7 @@ namespace MacMickey.DomainModel
         /// Available items of this product
         /// </summary>
         public int Stockpiled { get; set; }
+
+        public ICollection<BasketCardItem> BasketCardItems { get; set; }
     }
 }
