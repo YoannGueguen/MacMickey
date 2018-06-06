@@ -23,8 +23,6 @@ namespace MacMickey.Dal.Mapping
             builder.HasOne(o => o.Customer)
                 .WithMany(c => c.Orders);
 
-    //        builder.HasOne(o => o.BasketCard)
-    //.WithOne(b => b.);
         }
     }
 }

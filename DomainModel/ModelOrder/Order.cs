@@ -13,6 +13,8 @@ namespace MacMickey.DomainModel.ModelOrder
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
 
+        public bool IsValidate { get; set; } 
+
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
 
