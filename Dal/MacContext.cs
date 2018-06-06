@@ -11,7 +11,7 @@ namespace MacMickey.Dal
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Person> Persons { get; set; }
-        public DbSet<BasketCard> BasketCards { get; set; }
+        public DbSet<BasketCards> BasketCards { get; set; }
 
         public DbSet<Beverage> Beverages { get; set; }
         public DbSet<Burger> Burgers { get; set; }

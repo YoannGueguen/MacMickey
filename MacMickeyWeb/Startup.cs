@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using MacMickey.Dal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Website.Data;
+using Website.Services;
 
 namespace MacMickeyWeb
 {
@@ -23,6 +26,20 @@ namespace MacMickeyWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+            services.AddDbContext<MacContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MacMickeyDb")));
+
+            // Add application services.
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<BasketCardsService>();
+
             services.AddMvc();
         }
 
@@ -31,7 +48,7 @@ namespace MacMickeyWeb
         {
             if (env.IsDevelopment())
             {
-                InitializeDatabase(app);
+                //InitializeDatabase(app);
 
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
@@ -51,12 +68,12 @@ namespace MacMickeyWeb
             });
         }
 
-        private void InitializeDatabase(IApplicationBuilder app)
-        {
-            using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
-            {
-                scope.ServiceProvider.GetRequiredService<MacContext>().Database.Migrate();
-    }
-        }
+        //    private void InitializeDatabase(IApplicationBuilder app)
+        //    {
+        //        using (var scope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+        //        {
+        //            scope.ServiceProvider.GetRequiredService<MacContext>().Database.Migrate();
+        //}
+        //    }
     }
 }

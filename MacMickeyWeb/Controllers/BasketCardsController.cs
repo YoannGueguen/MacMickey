@@ -20,21 +20,21 @@ namespace MacMickeyWeb.Controllers
         }
 
         // GET: BasketCards
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var macContext = _context.BasketCards.Include(b => b.Product);
-            return View(await macContext.ToListAsync());
+            return View(macContext.ToList());
         }
 
         // GET: BasketCards/Details/5
-        public async Task<IActionResult> Details(string id)
+        public IActionResult Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var basketCard = await _context.BasketCards
+            var basketCard = _context.BasketCards
                 .Include(b => b.Product)
                 .SingleOrDefaultAsync(m => m.BasketCardId == id);
             if (basketCard == null)
