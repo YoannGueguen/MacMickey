@@ -1,6 +1,7 @@
 ﻿using MacMickey.Dal;
 using MacMickey.DomainModel;
 using MacMickey.DomainModel.ModelOrder;
+using MacMickeyWeb.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Website.Services
 {
-    public class BasketCardsService
+    public class BasketCardsService : IBasketCardsService
     {
         private readonly MacContext context;
 

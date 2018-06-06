@@ -16,11 +16,16 @@ namespace MacMickeyWeb.Controllers
     public class BasketCardsController : Controller
     {
         private readonly MacContext _context;
-        private readonly IBasketCardsService _cartService;
+        //private readonly IBasketCardsService _cartService;
 
-        public BasketCardsController(UserManager<ApplicationUser> userManager, IBasketCardsService cartService, MacContext context)
+        //public BasketCardsController(UserManager<ApplicationUser> userManager, IBasketCardsService cartService, MacContext context)
+        //{
+        //    _cartService = cartService;
+        //    _context = context;
+        //}
+
+        public BasketCardsController(MacContext context)
         {
-            _cartService = cartService;
             _context = context;
         }
 

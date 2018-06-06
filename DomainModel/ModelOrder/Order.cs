@@ -19,8 +19,5 @@ namespace MacMickey.DomainModel.ModelOrder
         public Customer Customer { get; set; }
 
         public BasketCard BasketCard { get; set; }
-
-
-        //public ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

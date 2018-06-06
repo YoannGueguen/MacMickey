@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MacMickey.DomainModel;
+using MacMickey.DomainModel.ModelOrder;
 
 namespace MacMickey.Dal
 {
@@ -246,13 +247,63 @@ namespace MacMickey.Dal
             };
             #endregion
 
+            #region add Customer
+            var customers = new List<Customer>
+            {
+                new Customer()
+                {
+                     FirstName = "Nicolas",
+                     LastName = "Vienat",
+                     DateofBirth = new DateTime(1995, 5, 10),
+                     Street ="219 impasse 74",
+                     ZipCode = "69007",
+                     City = "Lyon"
+                },
+                new Customer()
+                {
+                    FirstName = "Yoann",
+                     LastName = "Guegnen",
+                     DateofBirth = new DateTime(1994, 4, 1),
+                     Street ="27 rue raoul Servant",
+                     ZipCode = "69007",
+                     City = "Lyon"
+                },
+            };
+            #endregion
+
+            #region add Orders
+            var orders = new List<Order>
+            {
+                new Order()
+                {
+                    Discount = 100,
+                    Comments = "Trop bien cette commande",
+                    DateCreated = new DateTime(2018, 4, 1),
+                    DateModified = new DateTime(2018, 4, 1),
+                    IsValidate = false,
+                    CustomerId  = customers[0].PersonId,
+                    Customer = customers[0]
+    },
+                new Order()
+                {
+                    Discount = 100,
+                    Comments = "Trop bien cette commande x2",
+                    DateCreated = new DateTime(2018, 4, 1),
+                    DateModified = new DateTime(2018, 4, 1),
+                    IsValidate = false,
+                    CustomerId  = customers[1].PersonId,
+                    Customer = customers[1]
+                },
+            };
+            #endregion
+
             context.Burgers.AddRange(burgers);
             context.Beverages.AddRange(beverages);
             context.Sides.AddRange(sides);
             context.Desserts.AddRange(desserts);
             context.Menus.AddRange(menus);
-
-            //V2
+            context.Customers.AddRange(customers);
+            context.Orders.AddRange(orders);
 
             context.SaveChanges();
         }
