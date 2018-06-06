@@ -49,8 +49,6 @@ namespace MacMickeyWeb
         {
             if (env.IsDevelopment())
             {
-                //InitializeDatabase(app);
-
                 app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
