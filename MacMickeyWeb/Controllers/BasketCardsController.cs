@@ -57,7 +57,7 @@ namespace MacMickeyWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BasketCardId,CardId,Quantity,DateCreated,ProductId")] BasketCards basketCard)
+        public async Task<IActionResult> Create([Bind("BasketCardId,CardId,Quantity,DateCreated,ProductId")] BasketCard basketCard)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace MacMickeyWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("BasketCardId,CardId,Quantity,DateCreated,ProductId")] BasketCards basketCard)
+        public async Task<IActionResult> Edit(string id, [Bind("BasketCardId,CardId,Quantity,DateCreated,ProductId")] BasketCard basketCard)
         {
             if (id != basketCard.BasketCardId)
             {

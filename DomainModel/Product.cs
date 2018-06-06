@@ -33,6 +33,6 @@ namespace MacMickey.DomainModel
         /// </summary>
         public int Stockpiled { get; set; }
 
-        public virtual ICollection<BasketCards> BasketCards { get; set; }
+        public virtual ICollection<BasketCard> BasketCards { get; set; }
     }
 }

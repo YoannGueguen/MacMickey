@@ -7,12 +7,12 @@ using System.Text;
 
 namespace MacMickey.Dal.Mapping
 {
-    class BasketCardMapping
+    internal class BasketCardMapping : IEntityTypeConfiguration<BasketCard>
     {
-        public void Configure(EntityTypeBuilder<BasketCards> builder)
+        public void Configure(EntityTypeBuilder<BasketCard> builder)
         {
             builder.ToTable(name: "BasketCard", schema: "Domain");
-
+            //ERROR MAPPING inverser les cardinalite + passer product en icollection
             builder.HasOne(b => b.Product)
                 .WithMany(p => p.BasketCards)
                 .IsRequired()
