@@ -60,6 +60,11 @@ namespace MacMickeyAPI.Controllers
             {
                 return BadRequest();
             }
+            if (order.IsValidate == true)
+            {
+                return BadRequest();
+            }
+
 
             _context.Entry(order).State = EntityState.Modified;
 
